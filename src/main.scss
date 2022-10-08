@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+
+
+$im: !important;
+*{
+box-sizing: border-box;
+margin:0;
+padding: 0;
+outline: none;
+border: none;
+  font-family: 'Red Hat Display',sans-serif;
+  //border: var(--bd);
+}
+:root{
+  /*primary*/
+  --pb: hsla(255,100%,94%,1);
+  --br-b: hsla(245,75%,52%,1);
+  /*neutral*/
+  --v-p-b: hsla(255,100%,98%,0.8);
+  --ds-b: hsla(224,23%,55%,1);
+  --dk-b: hsla(223,47%,23%,1);
+  --wt: #fff;
+ --sz: 6.29rem;
+ --rad: 0.629rem;
+ --ts: transparent;
+ --cn: center;
+ --st-w: 100%;
+ --st-h: 100vh;
+ --trans: all .2s cubic-bezier(0.5,0.2,0,0.8);
+ --bd: 1px solid currentColor;
+ --bx-sh: 0 calc(var(--rad) + 3px) var(--rad) 0;
+}
+
+/* utility classes */
+.fx{
+ display: flex;
+ &-col{
+  flex-flow: column;
+  align-content: var(--cn);
+  justify-content: space-between;
+ }
+ &-row{
+  flex-flow: row;
+  align-content: var(--cn);
+  justify-content: space-evenly
+ }
+}
+.cn{
+ place-content: var(--cn);
+}
+.self-cn{
+ align-self: var(--cn) !important;
+}
+.tx-cn{
+ text-align: var(--cn);
+}
+
+.trans,.trans:hover,.trans:before,.trans:after{
+ transition: var(--trans);
+}
+
+h1,h3{
+ color: var(--dk-b);
+}
+
+span,p{
+ color: var(--ds-b);
+ font-weight: bold;
+ font-size: 0.899rem;
+}
+html{
+ font-size: 15.899px;
+ min-height: var(--st-h);
+ width: var(--st-w);
+ background: var(--v-p-b) url("/images/pattern-background-desktop.svg") no-repeat border-box top left/ 100% 50%;
+ body{
+  min-height: inherit;
+ }
+}
+.card{
+ height: calc(var(--sz)*5.5);
+ width: 21.385rem;
+ max-width: 22.14rem;
+ border-radius: calc(var(--rad) + 5px);
+ box-shadow: var(--bx-sh) hsla(245,75%,52%,.1);
+ background-color: var(--wt);
+ &__img{
+  height: 30%;
+  background: var(--ts) url("/images/illustration-hero.svg") no-repeat border-box center/cover;
+  border:{
+   top-left-radius: inherit;
+   top-right-radius: inherit;
+  }
+ }
+ 
+ &__desc{
+  height: 25%;
+  width: 90%;
+  justify-content: space-evenly $im;
+  h1{
+   font-size: 1.5rem;
+  }
+ }
+ 
+ &__plan{
+  height: 13%;
+  width: 85%;
+  background-color: var(--v-p-b);
+  border-radius: calc(var(--rad)/2);
+  h3{
+   font-size: 1.1rem;
+  }
+  a{
+   height: min-content;
+   font-weight: bold;
+   color: var(--br-b);
+   &:hover{
+    opacity: 0.8;
+   }
+  }
+  div{ 
+   justify-content: space-evenly$im;
+  }
+ }
+ 
+ &__btn{
+  height: 20%;
+  justify-content: space-evenly $im;
+  button{
+   width: 80%;
+   flex: 0.25 1 auto;
+   border-radius: calc(var(--rad)/1.7);
+   background-color: var(--br-b);
+   color: var(--wt);
+   font-weight: 600;
+   font-size: 0.799rem;
+   box-shadow: var(--bx-sh) hsla(245,75%,52%,.1);
+   &:first-child:hover{
+    opacity: 0.799;
+    transform: scale(0.9);
+   }
+   &:last-child{
+    background-color: var(--ts);
+    color: var(--ds-b);
+    box-shadow: none;
+    &:hover{
+     color: var(--dk-b);
+    }
+   }
+  }
+ }
+}
+
+.attr{
+ margin: 5%;
+}
